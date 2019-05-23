@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'robobo-sensing-ios_Example' do
+  pod 'robobo-sensing-ios', :path => '../'
+
+  target 'robobo-sensing-ios_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
