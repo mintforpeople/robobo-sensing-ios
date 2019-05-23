@@ -1,5 +1,5 @@
 import XCTest
-import robobo-sensing-ios
+import robobo_sensing_ios
 
 class Tests: XCTestCase {
     

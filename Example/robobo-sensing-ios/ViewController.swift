@@ -7,12 +7,79 @@
 //
 
 import UIKit
+import robobo_sensing_ios
+import robobo_framework_ios_pod
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, IAccelerationDelegate, IOrientationDelegate, RoboboManagerDelegate {
 
+    var manager : RoboboManager!
+   
+    var accelModule :IAccelerationModule!
+    var orientationModule :IOrientationModule!
+    var touchModule :ITouchModule!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        manager = RoboboManager()
+        manager.addFrameworkDelegate(self)
+        
+        
+        
+        
+        
+        do{
+            try manager.startup()
+            
+            var module = try manager.getModuleInstance("IAccelerationModule")
+            accelModule = module as? IAccelerationModule
+            module = try manager.getModuleInstance("IOrientationModule")
+            orientationModule = module as? IOrientationModule
+            module = try manager.getModuleInstance("ITouchModule")
+            touchModule = module as? ITouchModule
+           
+            accelModule.delegateManager.suscribe(self)
+            orientationModule.delegateManager.suscribe(self)
+            
+            //touchModule.delegateManager.suscribe(self)
+            
+            //touchModule.setView(mainView)
+            //try manager.shutdown()
+            
+        } catch {
+            print(error)
+        }
+    }
+    
+    func loadingModule(_ moduleInfo: String, _ moduleVersion: String) {
+        self.manager.log("Loading \(moduleInfo) \(moduleVersion)",LogLevel.VERBOSE)
+        
+    }
+    
+    func moduleLoaded(_ moduleInfo: String, _ moduleVersion: String) {
+        self.manager.log("Loaded \(moduleInfo) \(moduleVersion)", LogLevel.INFO)
+    }
+    
+    func frameworkStateChanged(_ state: RoboboManagerState) {
+        self.manager.log("Framework state changed: \(state)")
+    }
+    
+    func frameworkError(_ error: Error) {
+        self.manager.log("Framework error: \(error)", LogLevel.WARNING)
+    }
+    
+    func onAccelerationChange() {
+        
+    }
+    
+    func onAcceleration(_ xAccel: Double, _ yAccel: Double, _ zAccel: Double) {
+        manager.log("x:\(xAccel) y:\(yAccel) z:\(zAccel)")
+        
+    }
+    
+    func onOrientation(_ yaw: Double, _ pitch: Double, _ roll: Double) {
+        manager.log("yaw:\(yaw) pitch:\(pitch) roll:\(roll)")
     }
 
     override func didReceiveMemoryWarning() {

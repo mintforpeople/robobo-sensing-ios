@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		93874B70AFABD229E799B3DF /* Pods_robobo_sensing_ios_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28B4985B3540B0326194F93 /* Pods_robobo_sensing_ios_Tests.framework */; };
+		A042A52D2296BD0D00435BF4 /* modules.plist in Resources */ = {isa = PBXBuildFile; fileRef = A042A52C2296BD0D00435BF4 /* modules.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +41,12 @@
 		607FACE51AFB9204008FA782 /* robobo-sensing-ios_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "robobo-sensing-ios_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7E3B89B2AFE2EF31890CFAEC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		8F24965AAA1F7A20D9E3365D /* robobo-sensing-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = "robobo-sensing-ios.podspec"; path = "../robobo-sensing-ios.podspec"; sourceTree = "<group>"; };
+		7E3B89B2AFE2EF31890CFAEC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8F24965AAA1F7A20D9E3365D /* robobo-sensing-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "robobo-sensing-ios.podspec"; path = "../robobo-sensing-ios.podspec"; sourceTree = "<group>"; };
+		A042A52C2296BD0D00435BF4 /* modules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = modules.plist; sourceTree = "<group>"; };
 		B0FDEC80DEDC7F320E119CAF /* Pods-robobo-sensing-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-robobo-sensing-ios_Tests.debug.xcconfig"; path = "Target Support Files/Pods-robobo-sensing-ios_Tests/Pods-robobo-sensing-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C28B4985B3540B0326194F93 /* Pods_robobo_sensing_ios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_robobo_sensing_ios_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D73A62BA14AAD66FA263EDAF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D73A62BA14AAD66FA263EDAF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DF1E54BE64773809E9237520 /* Pods-robobo-sensing-ios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-robobo-sensing-ios_Example.release.xcconfig"; path = "Target Support Files/Pods-robobo-sensing-ios_Example/Pods-robobo-sensing-ios_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FEC1CDF5767C8147D50A6AAB /* Pods-robobo-sensing-ios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-robobo-sensing-ios_Example.debug.xcconfig"; path = "Target Support Files/Pods-robobo-sensing-ios_Example/Pods-robobo-sensing-ios_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +79,6 @@
 				B0FDEC80DEDC7F320E119CAF /* Pods-robobo-sensing-ios_Tests.debug.xcconfig */,
 				475C868A8889EC9D0109148C /* Pods-robobo-sensing-ios_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for robobo-sensing-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A042A52C2296BD0D00435BF4 /* modules.plist */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -213,6 +215,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = TQMHQSZL99;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -227,6 +230,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -246,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A042A52D2296BD0D00435BF4 /* modules.plist in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -311,16 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-robobo-sensing-ios_Example/Pods-robobo-sensing-ios_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/robobo-framework-ios-pod/robobo_framework_ios_pod.framework",
 				"${BUILT_PRODUCTS_DIR}/robobo-sensing-ios/robobo_sensing_ios.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/robobo_framework_ios_pod.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/robobo_sensing_ios.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +485,10 @@
 			baseConfigurationReference = FEC1CDF5767C8147D50A6AAB /* Pods-robobo-sensing-ios_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = TQMHQSZL99;
 				INFOPLIST_FILE = "robobo-sensing-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -497,7 +503,10 @@
 			baseConfigurationReference = DF1E54BE64773809E9237520 /* Pods-robobo-sensing-ios_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = TQMHQSZL99;
 				INFOPLIST_FILE = "robobo-sensing-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -511,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0FDEC80DEDC7F320E119CAF /* Pods-robobo-sensing-ios_Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -520,6 +530,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,11 +544,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 475C868A8889EC9D0109148C /* Pods-robobo-sensing-ios_Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
