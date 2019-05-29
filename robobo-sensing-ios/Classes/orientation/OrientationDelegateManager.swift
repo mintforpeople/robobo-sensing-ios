@@ -7,10 +7,13 @@
 //
 
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
 
 open class OrientationDelegateManager: DelegateManager {
-    override init() {
+    var remote: IRemoteControlModule!
+    init(_ remote: IRemoteControlModule) {
         super.init()
+        self.remote = remote
     }
     
     func notifyOrientation(_ yaw: Double,  _ pitch: Double, _ roll: Double){
@@ -19,5 +22,12 @@ open class OrientationDelegateManager: DelegateManager {
                 del.onOrientation(yaw, pitch, roll)
             }
         }
+        
+        let s:Status = Status("ORIENTATION")
+        s.putContents("yaw", String(format:"%f", yaw))
+        s.putContents("pitch", String(format:"%f", pitch))
+        s.putContents("roll", String(format:"%f", roll))
+        
+        remote.postStatus(s)
     }
 }

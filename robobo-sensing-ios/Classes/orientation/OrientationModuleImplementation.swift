@@ -7,9 +7,10 @@
 //
 import CoreMotion
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
 
 class OrientationModuleImplementation:NSObject, IOrientationModule {
-    var delegateManager: OrientationDelegateManager
+    var delegateManager: OrientationDelegateManager!
     
     
     var motionManager : CMMotionManager!
@@ -17,13 +18,14 @@ class OrientationModuleImplementation:NSObject, IOrientationModule {
     var yaw, pitch, roll: Double!
     var threshold : Double = 0.08
     var manager : RoboboManager!
+    var remote : IRemoteControlModule!
     
     
     
     
     
     override init() {
-        delegateManager = OrientationDelegateManager()
+        
         yaw = 0
         pitch = 0
         roll = 0
@@ -56,9 +58,23 @@ class OrientationModuleImplementation:NSObject, IOrientationModule {
     
     public func startup(_ manager: RoboboManager) throws {
         self.manager = manager
-        motionManager = CMMotionManager()
-        motionManager.startDeviceMotionUpdates()
+        
+        
+        do {
+            var module = try manager.getModuleInstance("IRemoteControlModule")
+            remote = module as? IRemoteControlModule
+        } catch  {
+            print(error)
+        }
+        delegateManager = OrientationDelegateManager(remote)
+
+        
+        DispatchQueue.main.async {
+            self.motionManager = CMMotionManager()
+            self.motionManager.startDeviceMotionUpdates()
+        }
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(OrientationModuleImplementation.processOrientation), userInfo: nil, repeats: true)
+        
     }
     
     public func shutdown() throws {

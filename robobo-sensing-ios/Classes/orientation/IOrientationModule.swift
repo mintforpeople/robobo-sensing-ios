@@ -9,7 +9,7 @@
 import robobo_framework_ios_pod
 
 public protocol  IOrientationModule: IModule {
-    var delegateManager: OrientationDelegateManager {get}
+    var delegateManager: OrientationDelegateManager! {get}
     func setDetectionThreshold(_ threshold:Double)
     
 }

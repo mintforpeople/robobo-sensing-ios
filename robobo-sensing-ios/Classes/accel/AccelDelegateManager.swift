@@ -7,10 +7,14 @@
 //
 
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
 
 open class AccelDelegateManager: DelegateManager {
-    override init() {
+    var remote:IRemoteControlModule!
+    
+    init(_ rem: IRemoteControlModule) {
       super.init()
+      remote = rem
     }
     
     func notifyAccel(_ xAccel: Double,  _ yAccel: Double, _ zAccel: Double){
@@ -19,6 +23,14 @@ open class AccelDelegateManager: DelegateManager {
                 del.onAcceleration(xAccel, yAccel, zAccel)
             }
         }
+        
+        let s:Status = Status("ACCEL")
+        s.putContents("x", String(format:"%f", xAccel))
+        s.putContents("y", String(format:"%f", yAccel))
+        s.putContents("z", String(format:"%f", zAccel))
+        
+        remote.postStatus(s)
+
     }
     
 }

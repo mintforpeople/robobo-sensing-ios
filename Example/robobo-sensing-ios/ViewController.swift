@@ -9,6 +9,7 @@
 import UIKit
 import robobo_sensing_ios
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
 
 class ViewController: UIViewController, IAccelerationDelegate, IOrientationDelegate, RoboboManagerDelegate {
 
@@ -17,6 +18,10 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
     var accelModule :IAccelerationModule!
     var orientationModule :IOrientationModule!
     var touchModule :ITouchModule!
+    var remoteModule :IRemoteControlModule!
+    
+    @IBOutlet var mainView: UIView!
+    var remoteProxy : ProxyTest!
     
     
     override func viewDidLoad() {
@@ -24,6 +29,7 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
         // Do any additional setup after loading the view, typically from a nib.
         manager = RoboboManager()
         manager.addFrameworkDelegate(self)
+        remoteProxy = ProxyTest()
         
         
         
@@ -38,13 +44,15 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
             orientationModule = module as? IOrientationModule
             module = try manager.getModuleInstance("ITouchModule")
             touchModule = module as? ITouchModule
-           
+            module = try manager.getModuleInstance("IRemoteControlModule")
+            remoteModule = module as? IRemoteControlModule
             accelModule.delegateManager.suscribe(self)
             orientationModule.delegateManager.suscribe(self)
             
-            //touchModule.delegateManager.suscribe(self)
+            remoteModule.registerRemoteControlProxy(remoteProxy)
+            touchModule.delegateManager.suscribe(self)
             
-            //touchModule.setView(mainView)
+            touchModule.setView(mainView)
             //try manager.shutdown()
             
         } catch {

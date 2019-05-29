@@ -8,12 +8,16 @@
 
 import UIKit
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
+
 class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
     
     
     
     
     var delegateManager: TouchDelegateManager!
+    
+    var remote: IRemoteControlModule!
     
     var manager: RoboboManager!
     
@@ -44,7 +48,15 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
     
     func startup(_ manager: RoboboManager) throws {
         self.manager = manager
-        delegateManager = TouchDelegateManager()
+        
+        do {
+            var module = try manager.getModuleInstance("IRemoteControlModule")
+            remote = module as? IRemoteControlModule
+        } catch  {
+            print(error)
+        }
+        
+        delegateManager = TouchDelegateManager(remote)
     }
     
     func shutdown() throws {

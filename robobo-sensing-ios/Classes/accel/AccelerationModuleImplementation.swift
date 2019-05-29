@@ -6,10 +6,13 @@
 //  Copyright © 2019 mintforpeople. All rights reserved.
 //
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
 import CoreMotion
 
 class AccelerationModuleImplementation: NSObject, IAccelerationModule {
-    var delegateManager: AccelDelegateManager
+    
+    var delegateManager: AccelDelegateManager!
+    var remote: IRemoteControlModule!
     
     
     var motionManager : CMMotionManager!
@@ -23,7 +26,7 @@ class AccelerationModuleImplementation: NSObject, IAccelerationModule {
     
     
     override init() {
-        delegateManager = AccelDelegateManager()
+        
         xAccel = 0
         yAccel = 0
         zAccel = 0
@@ -55,8 +58,23 @@ class AccelerationModuleImplementation: NSObject, IAccelerationModule {
     
     public func startup(_ manager: RoboboManager) throws {
         self.manager = manager
-        motionManager = CMMotionManager()
-        motionManager.startAccelerometerUpdates()
+        
+        do {
+            var module = try manager.getModuleInstance("IRemoteControlModule")
+            remote = module as? IRemoteControlModule
+        } catch  {
+            print(error)
+        }
+        
+        delegateManager = AccelDelegateManager(remote)
+        
+        
+        DispatchQueue.main.async {
+            self.motionManager = CMMotionManager()
+
+            self.motionManager.startAccelerometerUpdates()
+        }
+        
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(AccelerationModuleImplementation.processAccelerometer), userInfo: nil, repeats: true)
     }
     

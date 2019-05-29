@@ -9,7 +9,7 @@
 import robobo_framework_ios_pod
 
 public protocol IAccelerationModule: IModule {
-    var delegateManager: AccelDelegateManager {get}
+    var delegateManager: AccelDelegateManager! {get}
     func setDetectionThreshold(_ threshold:Double)
     
 

@@ -7,14 +7,28 @@
 //
 
 import robobo_framework_ios_pod
+import robobo_remote_control_ios
 
 open class TouchDelegateManager: DelegateManager {
+    var remote:IRemoteControlModule!
+    
+    init(_ remote:IRemoteControlModule) {
+        self.remote = remote
+    }
+    
     func notifyTap (_ tapX: Double, _ tapY:Double ){
         for delegate in delegates{
             if let del = delegate as? ITouchDelegate{
                 del.onTap(tapX, tapY)
             }
         }
+        
+        let s:Status = Status("TAP")
+        s.putContents("x", String(format:"%f", tapX))
+        s.putContents("y", String(format:"%f", tapY))
+        
+        
+        remote.postStatus(s)
     }
     func notifyTouch(_ tapX: Double, _ tapY:Double ){
         for delegate in delegates{
@@ -22,6 +36,13 @@ open class TouchDelegateManager: DelegateManager {
                 del.onTouch(tapX, tapY)
             }
         }
+        
+        let s:Status = Status("TAP")
+        s.putContents("x", String(format:"%f", tapX))
+        s.putContents("y", String(format:"%f", tapY))
+        
+        
+        remote.postStatus(s)
     }
     func notifyFling (_ direction: TouchGestureDirection, _ angle:Double, _ time: Double, _ distance: Double ){
         for delegate in delegates{
@@ -29,6 +50,12 @@ open class TouchDelegateManager: DelegateManager {
                 del.onFling(direction, angle,  time, distance)
             }
         }
+        let s:Status = Status("FLING")
+        s.putContents("angle", String(format:"%f", angle))
+        s.putContents("time", String(format:"%f", time))
+        s.putContents("distance", String(format:"%f",distance))
+        
+        remote.postStatus(s)
     }
     func notifyCaress (_ direction: TouchGestureDirection){
         for delegate in delegates{
