@@ -24,8 +24,8 @@ open class TouchDelegateManager: DelegateManager {
         }
         
         let s:Status = Status("TAP")
-        s.putContents("x", String(format:"%f", tapX))
-        s.putContents("y", String(format:"%f", tapY))
+        s.putContents("x", String(format:"%i", tapX))
+        s.putContents("y", String(format:"%i", tapY))
         
         
         remote.postStatus(s)
@@ -38,8 +38,8 @@ open class TouchDelegateManager: DelegateManager {
         }
         
         let s:Status = Status("TAP")
-        s.putContents("x", String(format:"%f", tapX))
-        s.putContents("y", String(format:"%f", tapY))
+        s.putContents("x", String(format:"%i", tapX))
+        s.putContents("y", String(format:"%i", tapY))
         
         
         remote.postStatus(s)
@@ -51,9 +51,9 @@ open class TouchDelegateManager: DelegateManager {
             }
         }
         let s:Status = Status("FLING")
-        s.putContents("angle", String(format:"%f", angle))
-        s.putContents("time", String(format:"%f", time))
-        s.putContents("distance", String(format:"%f",distance))
+        s.putContents("angle", String(format:"%i", angle))
+        s.putContents("time", String(format:"%i", time))
+        s.putContents("distance", String(format:"%i",distance))
         
         remote.postStatus(s)
     }

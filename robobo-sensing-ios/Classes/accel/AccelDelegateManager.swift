@@ -25,9 +25,9 @@ open class AccelDelegateManager: DelegateManager {
         }
         
         let s:Status = Status("ACCELERATION")
-        s.putContents("x", String(format:"%f", xAccel))
-        s.putContents("y", String(format:"%f", yAccel))
-        s.putContents("z", String(format:"%f", zAccel))
+        s.putContents("x", String(format:"%i", xAccel))
+        s.putContents("y", String(format:"%i", yAccel))
+        s.putContents("z", String(format:"%i", zAccel))
         
         remote.postStatus(s)
 
