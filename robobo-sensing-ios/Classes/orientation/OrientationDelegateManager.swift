@@ -24,9 +24,9 @@ open class OrientationDelegateManager: DelegateManager {
         }
         
         let s:Status = Status("ORIENTATION")
-        s.putContents("yaw", String(format:"%f", yaw))
-        s.putContents("pitch", String(format:"%f", pitch))
-        s.putContents("roll", String(format:"%f", roll))
+        s.putContents("yaw", String(Int( yaw)))
+        s.putContents("pitch", String(Int( pitch)))
+        s.putContents("roll", String(Int( roll)))
         
         remote.postStatus(s)
     }
