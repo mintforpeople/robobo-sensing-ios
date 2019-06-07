@@ -17,6 +17,7 @@
 		93874B70AFABD229E799B3DF /* Pods_robobo_sensing_ios_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C28B4985B3540B0326194F93 /* Pods_robobo_sensing_ios_Tests.framework */; };
 		A042A52D2296BD0D00435BF4 /* modules.plist in Resources */ = {isa = PBXBuildFile; fileRef = A042A52C2296BD0D00435BF4 /* modules.plist */; };
 		A06EE66D229ECC0A00D2F9AA /* ProxyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EE66C229ECC0A00D2F9AA /* ProxyTest.swift */; };
+		A06EE66F229EEA4E00D2F9AA /* ProxyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06EE66E229EEA4E00D2F9AA /* ProxyTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		8F24965AAA1F7A20D9E3365D /* robobo-sensing-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "robobo-sensing-ios.podspec"; path = "../robobo-sensing-ios.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A042A52C2296BD0D00435BF4 /* modules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = modules.plist; sourceTree = "<group>"; };
 		A06EE66C229ECC0A00D2F9AA /* ProxyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyTest.swift; sourceTree = "<group>"; };
+		A06EE66E229EEA4E00D2F9AA /* ProxyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyTest.swift; sourceTree = "<group>"; };
 		B0FDEC80DEDC7F320E119CAF /* Pods-robobo-sensing-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-robobo-sensing-ios_Tests.debug.xcconfig"; path = "Target Support Files/Pods-robobo-sensing-ios_Tests/Pods-robobo-sensing-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C28B4985B3540B0326194F93 /* Pods_robobo_sensing_ios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_robobo_sensing_ios_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73A62BA14AAD66FA263EDAF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				A06EE66C229ECC0A00D2F9AA /* ProxyTest.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				A06EE66E229EEA4E00D2F9AA /* ProxyTest.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06EE66F229EEA4E00D2F9AA /* ProxyTest.swift in Sources */,
 				A06EE66D229ECC0A00D2F9AA /* ProxyTest.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,

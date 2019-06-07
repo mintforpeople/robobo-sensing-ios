@@ -1,14 +1,14 @@
 PODS:
   - robobo-framework-ios-pod (0.1.0)
-  - robobo-remote-control-ios (0.1.0):
+  - robobo-remote-control-ios (0.1.2):
     - robobo-framework-ios-pod (~> 0.1.0)
-  - robobo-sensing-ios (0.1.1):
+  - robobo-sensing-ios (0.1.2):
     - robobo-framework-ios-pod (~> 0.1.0)
-    - robobo-remote-control-ios (~> 0.1.0)
+    - robobo-remote-control-ios (~> 0.1.2)
 
 DEPENDENCIES:
   - robobo-framework-ios-pod (~> 0.1.0)
-  - robobo-remote-control-ios (~> 0.1.0)
+  - robobo-remote-control-ios (~> 0.1.2)
   - robobo-sensing-ios (from `../`)
 
 SPEC REPOS:
@@ -22,9 +22,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   robobo-framework-ios-pod: 455ab7e508c33628ecf8bdc9089b085857514471
-  robobo-remote-control-ios: d035a680a41b94218169483d71eaae90f47e71e8
-  robobo-sensing-ios: eac4a98488768923fc49478ee6efd21de3b9f91a
+  robobo-remote-control-ios: c5f01ba4ce3ae94048e94cefa86d0bf803a42293
+  robobo-sensing-ios: 63cbb94e0d970a2289f6b7796556fb289f6cfaf1
 
-PODFILE CHECKSUM: b3f7287af75258582f06d420f8172ae5ef079efc
+PODFILE CHECKSUM: f3c34c343eaf9a6036808a6a97d8911421672a55
 
 COCOAPODS: 1.7.0

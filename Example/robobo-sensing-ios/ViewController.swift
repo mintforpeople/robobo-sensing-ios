@@ -20,6 +20,8 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
     var touchModule :ITouchModule!
     var remoteModule :IRemoteControlModule!
     
+    
+    
     @IBOutlet var mainView: UIView!
     var remoteProxy : ProxyTest!
     
