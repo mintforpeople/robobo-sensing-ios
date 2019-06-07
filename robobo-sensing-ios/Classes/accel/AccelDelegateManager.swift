@@ -24,7 +24,7 @@ open class AccelDelegateManager: DelegateManager {
             }
         }
         
-        let s:Status = Status("ACCEL")
+        let s:Status = Status("ACCELERATION")
         s.putContents("x", String(format:"%f", xAccel))
         s.putContents("y", String(format:"%f", yAccel))
         s.putContents("z", String(format:"%f", zAccel))
