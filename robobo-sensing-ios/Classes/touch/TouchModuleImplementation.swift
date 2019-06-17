@@ -112,11 +112,11 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
         
         
         if (timeElapsed < 120) && (distance < 5.0){
-            delegateManager.notifyTap((x/width)*100, (y/width)*100)
+            delegateManager.notifyTap((x/width)*100, (y/height)*100)
         }else if (timeElapsed < 200) && (distance > 5.0){
             delegateManager.notifyFling(direction, angle, Double(timeElapsed), distance)
         }else if (timeElapsed > 120) && (distance < 5.0){
-            delegateManager.notifyTouch((x/width)*100, (y/width)*100)
+            delegateManager.notifyTouch((x/width)*100, (y/height)*100)
         }else{
             delegateManager.notifyCaress(direction)
         }
