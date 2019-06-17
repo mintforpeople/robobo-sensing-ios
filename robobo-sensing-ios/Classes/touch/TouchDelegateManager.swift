@@ -38,8 +38,8 @@ open class TouchDelegateManager: DelegateManager {
         }
         
         let s:Status = Status("TAP")
-        s.putContents("x",String(Int(tapX)))
-        s.putContents("y", String(Int(tapY)))
+        s.putContents("coordx",String(Int(tapX)))
+        s.putContents("coordy", String(Int(tapY)))
         
         
         remote.postStatus(s)

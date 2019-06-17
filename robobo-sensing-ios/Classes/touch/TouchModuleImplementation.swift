@@ -27,6 +27,10 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
     
     var firstLocation: CGPoint!
     
+    var height: Double! = nil
+    
+    var width: Double! = nil
+    
     
     
     // https://www.techotopia.com/index.php/Identifying_Gestures_using_iOS_8_Gesture_Recognizers
@@ -34,7 +38,9 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
     func setView(_ view: UIView) {
         mainView = view
         ready = true
-        
+        let screenSize: CGRect = UIScreen.main.bounds
+        width = Double(screenSize.width)
+        height =  Double(screenSize.height)
         mainView.addGestureRecognizer(self)
     }
 
@@ -106,11 +112,11 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
         
         
         if (timeElapsed < 120) && (distance < 5.0){
-            delegateManager.notifyTap(x, y)
+            delegateManager.notifyTap((x/width)*100, (y/width)*100)
         }else if (timeElapsed < 200) && (distance > 5.0){
             delegateManager.notifyFling(direction, angle, Double(timeElapsed), distance)
         }else if (timeElapsed > 120) && (distance < 5.0){
-            delegateManager.notifyTouch(x, y)
+            delegateManager.notifyTouch((x/width)*100, (y/width)*100)
         }else{
             delegateManager.notifyCaress(direction)
         }
