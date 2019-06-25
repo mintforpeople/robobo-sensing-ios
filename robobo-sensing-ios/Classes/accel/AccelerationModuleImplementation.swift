@@ -42,9 +42,9 @@ class AccelerationModuleImplementation: NSObject, IAccelerationModule {
             let zAccelCurrent = accelerometerData.acceleration.z * 9.8
             
             if ((abs(xAccelCurrent-xAccel)>threshold)||(abs(yAccelCurrent-yAccel)>threshold)||(abs(zAccelCurrent-zAccel)>threshold)){
-                xAccel = accelerometerData.acceleration.x
-                yAccel = accelerometerData.acceleration.y
-                zAccel = accelerometerData.acceleration.z
+                xAccel = xAccelCurrent
+                yAccel = yAccelCurrent
+                zAccel = zAccelCurrent
                 delegateManager.notifyAccel(xAccel, yAccel, zAccel)
 
             }

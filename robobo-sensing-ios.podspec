@@ -40,6 +40,6 @@ Robobo sensing library, includes IMU and Touch modules
   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'robobo-framework-ios-pod', '~>0.1.1'
-   s.dependency 'robobo-remote-control-ios', '~>0.1.2'
+   s.dependency 'robobo-remote-control-ios', '~>0.1.3'
 
 end
