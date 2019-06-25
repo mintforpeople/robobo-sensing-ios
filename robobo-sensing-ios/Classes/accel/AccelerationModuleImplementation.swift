@@ -18,6 +18,7 @@ class AccelerationModuleImplementation: NSObject, IAccelerationModule {
     var motionManager : CMMotionManager!
     var timer: Timer!
     var xAccel, yAccel, zAccel: Double!
+    var lastXAccel, lastYAccel, lastZAccel: Double!
     var threshold : Double = 0.08
     var manager : RoboboManager!
    
@@ -30,13 +31,15 @@ class AccelerationModuleImplementation: NSObject, IAccelerationModule {
         xAccel = 0
         yAccel = 0
         zAccel = 0
+
     }
     
     @objc func processAccelerometer(){
+        
         if let accelerometerData = motionManager.accelerometerData {
-            let xAccelCurrent = accelerometerData.acceleration.x
-            let yAccelCurrent = accelerometerData.acceleration.y
-            let zAccelCurrent = accelerometerData.acceleration.z
+            let xAccelCurrent = accelerometerData.acceleration.x * 9.8
+            let yAccelCurrent = accelerometerData.acceleration.y * 9.8
+            let zAccelCurrent = accelerometerData.acceleration.z * 9.8
             
             if ((abs(xAccelCurrent-xAccel)>threshold)||(abs(yAccelCurrent-yAccel)>threshold)||(abs(zAccelCurrent-zAccel)>threshold)){
                 xAccel = accelerometerData.acceleration.x
