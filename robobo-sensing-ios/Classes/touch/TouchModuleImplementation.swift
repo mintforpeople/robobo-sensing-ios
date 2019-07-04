@@ -87,7 +87,7 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
             super.touchesBegan(touches, with: event)
             touchStarted = Int(event.timestamp * 1000)
             firstLocation = touches.first?.preciseLocation(in: mainView)
-            manager.log("START: X:\(touches.first?.preciseLocation(in: mainView).x ?? 0) Y:\(touches.first?.preciseLocation(in: mainView).y ?? 0)")
+            //manager.log("START: X:\(touches.first?.preciseLocation(in: mainView).x ?? 0) Y:\(touches.first?.preciseLocation(in: mainView).y ?? 0)")
         }
 
     }
@@ -95,7 +95,7 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesMoved(touches, with: event)
         let timeElapsed: Int = Int(event.timestamp * 1000) - touchStarted
-        manager.log("MOVE:   X:\(touches.first?.preciseLocation(in: mainView).x ?? 0) Y:\(touches.first?.preciseLocation(in: mainView).y ?? 0) Time elapsed: \(timeElapsed)")
+        //manager.log("MOVE:   X:\(touches.first?.preciseLocation(in: mainView).x ?? 0) Y:\(touches.first?.preciseLocation(in: mainView).y ?? 0) Time elapsed: \(timeElapsed)")
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
@@ -108,7 +108,7 @@ class TouchModuleImplementation: UIGestureRecognizer, ITouchModule  {
         let direction: TouchGestureDirection = directionCheck(firstLocation, (touches.first?.preciseLocation(in: mainView))!)
         let angle: Double = Double(firstLocation.angle(to: touches.first!.preciseLocation(in: mainView)))
         
-        manager.log("END:    X:\(x) Y:\(y) Time elapsed: \(timeElapsed) Distance: \(distance)")
+        //manager.log("END:    X:\(x) Y:\(y) Time elapsed: \(timeElapsed) Distance: \(distance)")
         
         
         if (timeElapsed < 120) && (distance < 5.0){
