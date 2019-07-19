@@ -21,7 +21,7 @@ pod 'robobo-sensing-ios'
 
 ## License
 
-robobo-remote-control-ios is available under the Apache 2.0 license. See the LICENSE file for more info.
+robobo-sensing-ios is available under the Apache 2.0 license. See the LICENSE file for more info.
 
 ***
 <!-- 
