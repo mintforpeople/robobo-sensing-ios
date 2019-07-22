@@ -16,8 +16,10 @@ pod 'robobo-sensing-ios'
 ```
 
 ## Author
-
-623e45d3ebd5e88abf84e2a4f33c4511abb531ad, lfllamas93@gmail.com
+<!--
+623e45d3ebd5e88abf84e2a4f33c4511abb531ad, 
+-->
+lfllamas93@gmail.com
 
 ## License
 
