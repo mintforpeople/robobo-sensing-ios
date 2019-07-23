@@ -2,7 +2,7 @@
 
 
 The sensing library is used to get infomation form the smartphone sensors in an easy mode.
-This library is composed by 3 modules:
+This library is composed by three modules:
 
 ### Acceleration module
 
