@@ -7,7 +7,6 @@ This library is composed by 3 modules:
 ### Acceleration module
 
 This module can be used for getting information about the state of the acceleration sensor of the smartphone.
-The interface of the  module is the following one:
 
 
 ### Orientation module
