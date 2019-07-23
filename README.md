@@ -1,5 +1,25 @@
 # robobo-sensing-ios
 
+
+The sensing library is used to get infomation form the smartphone sensors in an easy mode.
+This library is composed by 3 modules:
+
+### Acceleration module
+
+This module can be used for getting information about the state of the acceleration sensor of the smartphone.
+The interface of the  module is the following one:
+
+
+### Orientation module
+
+This module can be used for getting information about the state of the orientation sensor of the smartphone. This virtual sensor uses a mix of the acceleration, gyroscope and magnetometer sensor to obtain the absolute position of the device, therefore, if the smartphone lacks any of this hardware sensors, this module will not work.
+
+
+### Battery module
+
+This module allows the programmer to access the battery level of the device.
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
