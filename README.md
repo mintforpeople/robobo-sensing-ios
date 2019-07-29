@@ -18,13 +18,13 @@ This module can be used for getting information about the state of the orientati
 
 This module allows the detection of four different tactile gestures on the phone screen: 
 
-Taps: A fast tap on the screen
+* Taps: A fast tap on the screen
 
-Touch: A tap on the screen that lasts more than 0.5 seconds
+* Touch: A tap on the screen that lasts more than 0.5 seconds
 
-Fling: A fast swipe on the screen
+* Fling: A fast swipe on the screen
 
-Caress: A slow swipe on the screen
+* Caress: A slow swipe on the screen
 
 
 ## Example
