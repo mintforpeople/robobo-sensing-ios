@@ -31,7 +31,7 @@ This module allows the detection of four different tactile gestures on the phone
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-In the example we can see how the three modules are instanced and how to suscribe to thenotifications of the different status updates. 
+In the example we can see how the three modules are instanced and how to suscribe to the notifications of the different status updates. 
 
 ```swift
 override func viewDidLoad() {
