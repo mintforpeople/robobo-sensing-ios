@@ -4,11 +4,11 @@
 <dict>
 	<key>1.IRemoteControlModule</key>
 	<string>robobo_remote_control_ios.RemoteControlModule</string>
-	<key>8.IAccelerationModule</key>
-	<string>robobo_sensing_ios.AccelerationModuleImplementation</string>
-	<key>9.IOrientationModule</key>
-	<string>robobo_sensing_ios.OrientationModuleImplementation</string>
-	<key>3.ITouchModule</key>
+	<key>2.ITouchModule</key>
 	<string>robobo_sensing_ios.TouchModuleImplementation</string>
+	<key>3.IAccelerationModule</key>
+	<string>robobo_sensing_ios.AccelerationModuleImplementation</string>
+	<key>4.IOrientationModule</key>
+	<string>robobo_sensing_ios.OrientationModuleImplementation</string>
 </dict>
 </plist>

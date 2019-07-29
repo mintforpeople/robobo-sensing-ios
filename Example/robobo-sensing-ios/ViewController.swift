@@ -11,7 +11,8 @@ import robobo_sensing_ios
 import robobo_framework_ios_pod
 import robobo_remote_control_ios
 
-class ViewController: UIViewController, IAccelerationDelegate, IOrientationDelegate, RoboboManagerDelegate {
+class ViewController: UIViewController, IAccelerationDelegate, IOrientationDelegate, RoboboManagerDelegate, ITouchDelegate {
+    
 
     var manager : RoboboManager!
    
@@ -33,10 +34,6 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
         manager.addFrameworkDelegate(self)
         remoteProxy = ProxyTest()
         
-        
-        
-        
-        
         do{
             try manager.startup()
             
@@ -46,16 +43,19 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
             orientationModule = module as? IOrientationModule
             module = try manager.getModuleInstance("ITouchModule")
             touchModule = module as? ITouchModule
+            
             module = try manager.getModuleInstance("IRemoteControlModule")
             remoteModule = module as? IRemoteControlModule
-            accelModule.delegateManager.suscribe(self)
-            orientationModule.delegateManager.suscribe(self)
+            
             
             remoteModule.registerRemoteControlProxy(remoteProxy)
+            
+            accelModule.delegateManager.suscribe(self)
+            orientationModule.delegateManager.suscribe(self)
             touchModule.delegateManager.suscribe(self)
             
             touchModule.setView(mainView)
-            //try manager.shutdown()
+            
             
         } catch {
             print(error)
@@ -91,6 +91,26 @@ class ViewController: UIViewController, IAccelerationDelegate, IOrientationDeleg
     func onOrientation(_ yaw: Double, _ pitch: Double, _ roll: Double) {
         manager.log("yaw:\(yaw) pitch:\(pitch) roll:\(roll)")
     }
+    
+    func onTap(_ tapX: Double, _ tapY: Double) {
+        manager.log("Tap x:\(tapX) y:\(tapY)")
+
+    }
+    
+    func onTouch(_ tapX: Double, _ tapY: Double) {
+        manager.log("Touch x:\(tapX) y:\(tapY)")
+
+    }
+    
+    func onFling(_ direction: TouchGestureDirection, _ angle: Double, _ time: Double, _ distance: Double) {
+        manager.log("Fling angle:\(angle) time:\(time)")
+
+    }
+    
+    func onCaress(_ direction: TouchGestureDirection) {
+        manager.log(String(direction.hashValue))
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
