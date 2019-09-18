@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'robobo-sensing-ios'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'Robobo sensing modules'
   s.swift_version    = '4.2'
 

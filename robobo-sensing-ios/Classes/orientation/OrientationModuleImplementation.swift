@@ -89,8 +89,10 @@ class OrientationModuleImplementation:NSObject, IOrientationModule {
         DispatchQueue.main.async {
             self.motionManager = CMMotionManager()
             self.motionManager.startDeviceMotionUpdates()
+            
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(OrientationModuleImplementation.processOrientation), userInfo: nil, repeats: true)
         }
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(OrientationModuleImplementation.processOrientation), userInfo: nil, repeats: true)
+        
         
     }
     

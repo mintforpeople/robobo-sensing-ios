@@ -93,9 +93,11 @@ class AccelerationModuleImplementation: NSObject, IAccelerationModule {
             self.motionManager = CMMotionManager()
 
             self.motionManager.startAccelerometerUpdates()
+            
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(AccelerationModuleImplementation.processAccelerometer), userInfo: nil, repeats: true)
         }
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(AccelerationModuleImplementation.processAccelerometer), userInfo: nil, repeats: true)
+        
     }
     
     public func shutdown() throws {
