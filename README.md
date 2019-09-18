@@ -18,20 +18,20 @@ This module can be used for getting information about the state of the orientati
 
 This module allows the detection of four different tactile gestures on the phone screen: 
 
-Taps: A fast tap on the screen
+* Taps: A fast tap on the screen
 
-Touch: A tap on the screen that lasts more than 0.5 seconds
+* Touch: A tap on the screen that lasts more than 0.5 seconds
 
-Fling: A fast swipe on the screen
+* Fling: A fast swipe on the screen
 
-Caress: A slow swipe on the screen
+* Caress: A slow swipe on the screen
 
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-In the example we can see how the three modules are instanced and how to suscribe to thenotifications of the different status updates. 
+In the example we can see how the three modules are instanced and how to suscribe to the notifications of the different status updates. 
 
 ```swift
 override func viewDidLoad() {
@@ -100,7 +100,7 @@ func onCaress(_ direction: TouchGestureDirection) {
 
 ## Requirements
 
-This module depends on robobo-framework-ios-pod and robobo-remote-control-ios, add it to your podfile as follows:
+This module depends on robobo-framework-ios-pod and robobo-remote-control-ios, add them to your podfile as follows:
 
 ```ruby
 pod 'robobo-framework-ios-pod','~>0.1.0'
@@ -115,7 +115,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'robobo-sensing-ios'
 ```
-Also add the following lines to the beginning of `your Podfile, to allow the download of dependencies through our private Podspec repository:
+Also add the following lines to the beginning of your Podfile, to allow the download of dependencies through our private Podspec repository:
 
 ```ruby
 source "https://github.com/mintforpeople/mint-podspec-repo.git"
@@ -154,7 +154,7 @@ luis.llamas@mintforpeople.com
 
 robobo-sensing-ios is available under the Apache 2.0 license. See the LICENSE file for more info.
 
-***
+## Acknowledgement
 <!-- 
     ROSIN acknowledgement from the ROSIN press kit
     @ https://github.com/rosin-project/press_kit
